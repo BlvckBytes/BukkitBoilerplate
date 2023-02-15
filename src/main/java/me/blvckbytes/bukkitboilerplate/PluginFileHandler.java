@@ -24,6 +24,7 @@
 
 package me.blvckbytes.bukkitboilerplate;
 
+import me.blvckbytes.utilitytypes.ETriResult;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.Nullable;
 
@@ -65,5 +66,18 @@ public class PluginFileHandler implements IFileHandler {
     }
 
     return new FileOutputStream(file);
+  }
+
+  @Override
+  public ETriResult makeDirectories(String path) {
+    File file = new File(plugin.getDataFolder(), path);
+
+    if (file.isDirectory())
+      return ETriResult.EMPTY;
+
+    if (file.mkdirs())
+      return ETriResult.SUCCESS;
+
+    return ETriResult.ERROR;
   }
 }

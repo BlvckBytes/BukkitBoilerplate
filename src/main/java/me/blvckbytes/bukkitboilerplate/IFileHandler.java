@@ -24,6 +24,7 @@
 
 package me.blvckbytes.bukkitboilerplate;
 
+import me.blvckbytes.utilitytypes.ETriResult;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.FileInputStream;
@@ -35,5 +36,14 @@ public interface IFileHandler {
   @Nullable FileInputStream openForReading(String path) throws IOException;
 
   @Nullable FileOutputStream openForWriting(String path) throws IOException;
+
+  /**
+   * Create all directories specified by the path, which includes the base directory
+   * as well as all of it's parents
+   * @return {@link ETriResult#SUCCESS} on success, {@link ETriResult#EMPTY} if the
+   *         directories already existed and {@link ETriResult#ERROR} if at least one
+   *         directory could not be created (was already a file, missing permissions, etc)
+   */
+  ETriResult makeDirectories(String path);
 
 }
