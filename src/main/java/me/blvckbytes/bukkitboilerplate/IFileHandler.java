@@ -37,6 +37,10 @@ public interface IFileHandler {
 
   @Nullable FileOutputStream openForWriting(String path) throws IOException;
 
+  boolean doesFileExist(String path);
+
+  void saveResource(String path);
+
   /**
    * Create all directories specified by the path, which includes the base directory
    * as well as all of it's parents

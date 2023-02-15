@@ -69,6 +69,17 @@ public class PluginFileHandler implements IFileHandler {
   }
 
   @Override
+  public boolean doesFileExist(String path) {
+    File file = new File(plugin.getDataFolder(), path);
+    return file.exists() && file.isFile();
+  }
+
+  @Override
+  public void saveResource(String path) {
+    this.plugin.saveResource(path, true);
+  }
+
+  @Override
   public ETriResult makeDirectories(String path) {
     File file = new File(plugin.getDataFolder(), path);
 
