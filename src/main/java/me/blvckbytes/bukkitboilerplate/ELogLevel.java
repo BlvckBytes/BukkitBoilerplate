@@ -24,10 +24,8 @@
 
 package me.blvckbytes.bukkitboilerplate;
 
-import lombok.AllArgsConstructor;
 import org.bukkit.ChatColor;
 
-@AllArgsConstructor
 public enum ELogLevel {
   DEBUG(ChatColor.GOLD),
   INFO(ChatColor.GREEN),
@@ -35,4 +33,8 @@ public enum ELogLevel {
   ;
 
   public final ChatColor color;
+
+  ELogLevel(ChatColor color) {
+    this.color = color;
+  }
 }

@@ -26,21 +26,19 @@
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot</artifactId>
             <version>1.17-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
             <version>24.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.24</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>me.blvckbytes</groupId>
             <artifactId>UtilityTypes</artifactId>
             <version>0.1</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
