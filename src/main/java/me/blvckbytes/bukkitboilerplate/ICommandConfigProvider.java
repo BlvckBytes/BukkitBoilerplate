@@ -24,16 +24,18 @@
 
 package me.blvckbytes.bukkitboilerplate;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 public interface ICommandConfigProvider {
 
-  String getName();
+  @NotNull String getName();
 
-  List<String> getAliases();
+  @NotNull List<String> getAliases();
 
-  String getDescription();
+  @NotNull String getDescription();
 
-  String getUsage();
+  @NotNull String getUsage();
 
 }

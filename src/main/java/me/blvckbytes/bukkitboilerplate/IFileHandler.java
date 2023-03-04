@@ -37,6 +37,8 @@ public interface IFileHandler {
 
   @Nullable FileOutputStream openForWriting(String path) throws IOException;
 
+  String getAbsolutePath(String path);
+
   boolean doesFileExist(String path);
 
   void saveResource(String path);

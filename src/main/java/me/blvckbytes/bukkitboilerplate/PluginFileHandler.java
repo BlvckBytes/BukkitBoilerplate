@@ -69,6 +69,11 @@ public class PluginFileHandler implements IFileHandler {
   }
 
   @Override
+  public String getAbsolutePath(String path) {
+    return new File(plugin.getDataFolder(), path).getAbsolutePath();
+  }
+
+  @Override
   public boolean doesFileExist(String path) {
     File file = new File(plugin.getDataFolder(), path);
     return file.exists() && file.isFile();

@@ -30,4 +30,6 @@ public interface ILogger {
 
   void logError(Throwable error);
 
+  void setEnableDebug(boolean enable);
+
 }

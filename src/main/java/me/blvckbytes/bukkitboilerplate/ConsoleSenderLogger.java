@@ -33,6 +33,7 @@ import java.io.StringWriter;
 public class ConsoleSenderLogger implements ILogger {
 
   private final Plugin plugin;
+  private boolean enableDebug;
 
   public ConsoleSenderLogger(Plugin plugin) {
     this.plugin = plugin;
@@ -50,6 +51,9 @@ public class ConsoleSenderLogger implements ILogger {
 
   @Override
   public void log(ELogLevel level, String message) {
+    if (level == ELogLevel.DEBUG && !enableDebug)
+      return;
+
     String[] lines = message.split("\n");
 
     for (String line : lines)
@@ -67,5 +71,10 @@ public class ConsoleSenderLogger implements ILogger {
     } catch (Exception e) {
       e.printStackTrace();
     }
+  }
+
+  @Override
+  public void setEnableDebug(boolean enable) {
+    this.enableDebug = enable;
   }
 }
