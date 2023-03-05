@@ -30,6 +30,7 @@ import org.jetbrains.annotations.Nullable;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 public interface IFileHandler {
 
@@ -42,6 +43,8 @@ public interface IFileHandler {
   boolean doesFileExist(String path);
 
   void saveResource(String path);
+
+  @Nullable InputStream getResource(String path);
 
   /**
    * Create all directories specified by the path, which includes the base directory

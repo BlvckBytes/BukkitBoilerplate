@@ -28,10 +28,7 @@ import me.blvckbytes.utilitytypes.ETriResult;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 
 public class PluginFileHandler implements IFileHandler {
 
@@ -82,6 +79,11 @@ public class PluginFileHandler implements IFileHandler {
   @Override
   public void saveResource(String path) {
     this.plugin.saveResource(path, true);
+  }
+
+  @Override
+  public @Nullable InputStream getResource(String path) {
+    return this.plugin.getResource(path);
   }
 
   @Override
